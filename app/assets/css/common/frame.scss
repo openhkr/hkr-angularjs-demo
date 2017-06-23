@@ -1,0 +1,366 @@
+@import 'theme';
+@import 'common';
+
+$top-height:50px;
+$colorBase:#373d41;
+.section {
+  background-color: #ffffff;
+  display: block;
+  position: absolute;
+  left: 0px;
+  width: 100%;
+  margin: 0px;
+}
+
+a {
+  cursor: pointer;
+}
+
+//顶部标题
+.top-section {
+  @extend .section;
+  height: $top-height;
+  background-color: #0f67a7;
+  color: whitesmoke;
+  min-width: 1440px;
+  .top-title{
+    margin: 0px;
+    margin-left: 10px;
+    line-height: $top-height;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 600;
+  }
+  .top-tools{
+    display: inline-block;
+    margin: 15px 10px;
+    padding-top: 10px;
+    line-height: 40px;
+    float: right;
+    width: 150px;
+    color: $white-color ;
+    padding-right: 15px;
+    .top-nav {
+      cursor: pointer;
+      float: right;
+      display: inline-block;
+      height: 38px;
+      width: 40px;
+      text-align: center;
+      -webkit-box-shadow: 4px 2px 4px $top-bg-color;
+      z-index: 104;
+      i{
+        line-height: 40px;
+      }
+    }
+    .top-nav:active{
+      background-color: $top-bg-color;
+      opacity: .5;
+    }
+  }
+
+  .navbar-collapse{
+    display: block;
+    position: absolute;
+    top:0px;
+    width: 150px;
+    left:-153px;
+    padding: 0px;
+    background-color: $frame-main-color;
+    > li {
+      background: -webkit-linear-gradient(left, $frame-nav-sub-color,$frame-main-color);
+      -webkit-box-shadow: 4px 2px 4px $frame-nav-sub-color;
+      margin: 0px;
+      border-bottom: 1px solid #EEE;
+      &:first-of-type{
+        border-top: 0px;
+      }
+      &:last-of-type{
+        margin-bottom: 0px;
+      }
+    }
+  }
+  .arrow-up{
+    position: absolute;
+    z-index: 109;
+    right: 10px;
+    width: 0;
+    height: 0;
+    margin-top:-12px;
+    border-left: 15px solid transparent;
+    border-right: 15px solid transparent;
+    border-bottom: 12px solid $frame-main-color;
+  }
+  .top-nav-items.show{
+    animation:horizontal-show-animations-frames .8s;
+  }
+  .top-nav-items{
+    width: 12%;
+    min-width: 160px;
+    max-width: 240px;
+    right: 18px;
+    margin-top:10px;
+    position: absolute;
+    z-index: 106;
+    -webkit-box-shadow: 4px 2px 4px $top-bg-color;
+    opacity: .9;
+    >ul > li {
+      background: -webkit-linear-gradient(left,$frame-main-color, $top-bg-color);
+      a{
+        padding-left: 8px;
+        color: $white-color;
+        i{
+          margin-right: 4px;
+        }
+        &:hover,&:focus{
+          background-color: $white-color;
+          color: $top-bg-color;
+          font-size: 16px;
+          padding-top: 9px;
+          padding-bottom: 9px;
+        }
+      }
+      &:hover,&:focus{
+        .navbar-collapse{
+          display:block;
+        }
+      }
+
+    }
+
+    li:not(:first-of-type){
+      border-top:1px solid $frame-main-color;
+    }
+  }
+}
+//顶上假进度条
+.progress-hr{
+  height: 4px;
+  top:60px;
+  left: 0px;
+  position: absolute;
+  width: 0%;
+  z-index: 101;
+  background-color: #2dcf52;
+}
+.progress-hr.action{
+  animation: top-progress-animation 2s 1;
+}
+@keyframes top-progress-animation {
+  0%      {width:0px}
+  25%     {width:20%}
+  60%     {width:99%}
+  99%     {width:100%}
+  100%    {width:0}
+}
+
+//中间的内容部分，包括左边导航部分
+.content-section{
+  @extend .section;
+  top:$top-height;
+  right: 0px;
+  bottom: 0px;
+  //background:url(/platform/assets/images/sky-bg.jpg) no-repeat center center;
+  //background-size: cover;
+  background: -moz-linear-gradient(top, rgb(67, 164, 226), #055b9c 8%);
+  background: -webkit-gradient(linear, 0 0, 0 117%, from(rgb(67, 164, 226)), to(#055b9c));
+  overflow: auto;
+  //overflow-x: hidden;
+  min-width: 1440px;
+}
+//主要内容部分
+$left-width-p: 12%;
+$right-width-p: 98.5% - $left-width-p;
+.mo-content::-webkit-scrollbar{width:0px};
+.mo-content{
+  /* border: 1px solid #d1d1d1; */
+  background-color: rgba(255, 255, 255, 0.13);
+  padding: 5px;
+  /* box-shadow: 2px 2px 4px #9b9b9b; */
+  display: inline-block;
+  position: absolute;
+  left: 12%;
+  margin: 8px;
+  overflow: auto;
+  min-height: 95%;
+  /* min-width: 86.5%; */
+  /* max-width: 98%; */
+ // transition: left 1s;
+  width: 86%;
+}
+.mo-content.max-width{
+  left: 10px;
+  width: 98%;
+}
+//内容部分切入动画
+.mo-content.showing {
+  @include minxin-left-animation($left-width-p);
+}
+.mo-content.max-width.showing {
+  @include minxin-left-animation-on-max(0%);
+}
+@media (max-width: 1440px) {
+  .mo-content{
+    left:14%;
+    width:98%;
+  }
+  .mo-content.showing {
+    @include minxin-left-animation-on-max(0%);
+  }
+  @include minxin-left-animation-on-max(0%);
+}
+
+
+//左侧导航栏
+.left-nav::-webkit-scrollbar{width:0px};
+.left-nav {
+  background-color: #0f67a7;
+  color: #FFF;
+  height: 95%;
+  width: 100%;
+  overflow-y: auto;
+  overflow-x:hidden;
+  position: absolute;
+  display: inline-block;
+  top: 9px;
+  left: 0px;
+  width: 12%;
+  max-width: 200px;
+  min-width: 170px;
+   .nav.nav-sidebar {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff;
+    >li {
+      margin:1px 0px;
+
+      a{
+        width: 100%;
+        color:#000000;
+        display: inline-block;
+        cursor: pointer;
+        &:hover,&:focus{
+          color: $top-bg-color;
+          font-weight: bold;
+          font-size: 16px;
+          padding-top: 9px !important;
+          padding-bottom: 9px !important;
+        }
+      }
+      >ul.navbar-collapse{
+        padding-right: 6px;
+        > li{
+          background: -webkit-linear-gradient(left, $frame-nav-sub-color,$frame-main-color);
+          border-bottom: 1px solid gray;
+          margin: 2px 0px 1px 8px;
+          a {
+            padding: 4px 4px 4px 8px;
+            &:hover,&:focus{
+              padding-top: 3px !important;
+              padding-bottom: 3px !important;
+            }
+          }
+        }
+        > li:last-of-type{
+          margin-bottom: 5px;
+        }
+        > li:first-of-type{
+          margin-top: 3px;
+        }
+      }
+
+    }
+    .fa {
+      float: right;
+      line-height: 20px;
+      font-size: 14px !important;
+    }
+  }
+}
+.left-nav-hide-btn{
+  cursor: pointer;
+  position: absolute;
+  top:40%;
+  height: 98px;
+  line-height: 96px;
+  width: 12px;
+  right: 0px;
+  background-color: #4caae6;
+  @include mixin-border-radius(14px, 0px, 14px, 0px);
+
+  color: $top-bg-color;
+}
+
+
+.left-nav-show-btn {
+  position: absolute;
+  width: 20px;
+  height: 98px;
+  padding-right: 6px;
+  top:40%;
+  z-index: 103;
+  left: -60px;
+  background-color: #3ed194;
+  @include mixin-border-radius(0px, 10px, 0px, 10px);
+  color: whitesmoke;
+  cursor: pointer;
+}
+
+.left-nav-show-btn.show {
+  left: -5px;
+  animation: left-nav-show-btn-show-animation .5s 1;
+}
+@keyframes left-nav-show-btn-show-animation {
+  0%      {left: -60px;}
+  25%     {left: -50px;}
+  50%     {left: -40px;}
+  80%     {left: 0px;}
+  100%    {left: 0px;}
+}
+
+/*查询行*/
+.searchArea{
+  padding-left:15px;
+  margin-bottom:10px;
+  font-size: 14px;
+  input{
+    height:33px;
+    width:145px;
+    font-size: 12px;
+    border: 1px solid #d6d6d6;
+    border-radius: 3px;
+  }
+  .group{
+    width:260px;
+  }
+  .btns{
+    margin-left:40px;
+  }
+  .dateGroup{
+    width:500px;
+    .dateRange{
+      margin-top:3px;
+    }
+  }
+  .timeGroup{
+    width:750px;
+  }
+  .time,.select{
+    line-height: 25px;
+    font-size:12px;
+  }
+  .time{
+    margin-left: 30px;
+  }
+  .group label:nth-child(1),.dateGroup label:nth-child(1),.timeGroup label:nth-child(1)
+  {
+    width:91px;
+    text-align: right;
+  }
+  .row{
+    margin-bottom:10px;
+  }
+}
+
+

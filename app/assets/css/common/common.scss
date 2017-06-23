@@ -1,0 +1,143 @@
+@function pxToRem($px) {
+  @return $px / $baseFontSize * 1rem;
+}
+
+@mixin mixin-gradually－background-color($begin,$end) {
+  background: -ms-linear-gradient(top, $begin, $end);
+  background: -o-linear-gradient(top, $begin, $end);
+  background: -moz-linear-gradient(top, $begin, $end);
+  background: -webkit-gradient(linear, 0% 0%, 0% 100%, from($begin), to($end));
+  background: -webkit-linear-gradient(top, $begin, $end);
+}
+
+@mixin mixin-border-radius($tl,$tr,$bl,$br) {
+  border-radius-topleft: $tl;
+  border-radius-bottomleft: $bl;
+  border-radius-topright: $tr;
+  border-radius-bottomright: $br;
+
+  -moz-border-radius-topleft: $tl;
+  -moz-border-radius-bottomleft: $bl;
+  -moz-border-radius-topright: $tr;
+  -moz-border-radius-bottomright: $br;
+
+  -o-border-radius-topleft: $tl;
+  -o-border-radius-bottomleft: $bl;
+  -o-border-radius-topright: $tr;
+  -o-border-radius-bottomright: $br;
+
+  -webkit-border-top-left-radius: $tl;
+  -webkit-border-bottom-left-radius: $bl;
+  -webkit-border-top-right-radius: $tr;
+  -webkit-border-bottom-right-radius: $br;
+}
+
+@mixin mixin-opacity($opcaity) {
+  filter: alpha(opacity=$opcaity*100);
+  -moz-opacity: $opcaity;
+  -khtml-opacity: $opcaity;
+  opacity: $opcaity;
+}
+
+@mixin mixin-transition-opacity($duration) {
+  transition-property: opacity;
+  transition-duration: $duration;
+  -moz-transition-property: opacity;
+  -moz-transition-duration: $duration;
+
+  -webkit-transition-property: opacity;
+  -webkit-transition-duration: $duration;
+
+  -o-transition-property: opacity;
+  -o-transition-duration: $duration;
+}
+
+@mixin mixin-color($colors) {
+  color: nth($colors, 1);
+  &:active {
+    color: nth($colors, 2);
+  }
+  &:hover {
+    color: nth($colors, 3);
+  }
+}
+
+@mixin minxin-left-animation($left) {
+  animation: left-animation .5s 1;
+  @keyframes left-animation {
+    from {
+      left: $left + 10%;
+      opacity: 0;
+    }
+    to {
+      left: $left;
+      opacity: 1;
+    }
+  }
+}
+@mixin minxin-left-animation-on-max($left) {
+  animation: left-animation-on-max .8s 1;
+  @keyframes left-animation-on-max {
+    from {
+      left: $left + 10%;
+      opacity: 0;
+    }
+    to {
+      left: $left;
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes show-animations-frames
+{
+  0%    {opacity: 0;transform: translateX(100%)}
+  30%   {opacity: 1;transform: translateX(-15px)}
+  100%  {opacity: 1;transform: translateX(0)}
+}
+@keyframes hide-animations-frames
+{
+  0%   {opacity: 1;transform: translateX(0)}
+  70%  {opacity: 1;transform: translateX(-15px)}
+  100% {opacity: 0;transform: translateX(100%);display: none;}
+}
+
+@keyframes horizontal-show-animations-frames
+{
+  0%    {opacity: 0;transform: translateY(-100%)}
+  70%   {opacity: 1;transform: translateY(10%)}
+  100%  {opacity: 1;transform: translateY(0)}
+}
+@keyframes horizontal-hide-animations-frames
+{
+  0%   {opacity: 1;transform: translateY(0)}
+  70%  {opacity: 1;transform: translateY(10%)}
+  100% {opacity: 0;transform: translateY(-100%);display: none}
+}
+
+.no-padding{
+  padding: 0px;
+}
+//input::-webkit-input-placeholder { color: #e3e3e3;font-size:14px;font-weight: 600;}
+//input:-moz-placeholder { color:#e3e3e3;font-size:14px;font-weight: 600;}
+//input::-moz-placeholder { color:#e3e3e3;font-size:14px;font-weight: 600;}
+//input:-ms-input-placeholder { color:#e3e3e3;font-size:14px;font-weight: 600;}
+
+.danger-font{
+  line-height: 14px;
+  font-size: 12px;
+  text-align: center;
+}
+.ng2-pagination .current{
+  background-color: #2b9ad8  !important;
+}
+
+.table th, .table td {
+  padding: 6px;
+  vertical-align: top;
+  border-top: 1px solid #eceeef;
+}
+input[required]:invalid, input:focus:invalid, textarea[required]:invalid, textarea:focus:invalid{box-shadow: none;}
+.rowHeight{
+  margin: 20px 0px;
+}

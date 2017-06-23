@@ -1,0 +1,42 @@
+.panel{
+  margin: 0 auto;
+  width: 96%;
+  padding: 20px;
+}
+.panel-heading{
+  color: #ffffff;
+  font-weight: 600;
+}
+.panel-operation{
+  float: right;
+  margin-right: 20px;
+}
+.dashboardPanel{
+  background-color: rgba(229, 233, 234, 0.25);
+  border-radius: 5px;
+  padding: 10px;
+  float: left;
+  margin: 20px;
+}
+.dashboardPanelTitle{
+  height: 40px;
+  font-size: 18px;
+  line-height: 30px;
+  color: #ffffff;
+  padding-left: 5px;
+  text-align: center;
+  border-bottom: 1px solid #fafcfd;
+}
+.dashboardPanelDot{
+  width: 30px;
+  height:30px;
+  margin-top:10px;
+  float:left;
+  border-radius: 20px;
+}
+.progress-bar{
+  background-color: #ffffff;
+}
+.progress{
+  background-color:#335c8b;
+}
