@@ -1,0 +1,214 @@
+.ui-panelmenu .ui-panelmenu-header.ui-state-active, .ui-panelmenu .ui-panelmenu-header.ui-state-active a {
+  border: none;
+  line-height: 30px;
+  height: 40px;
+  color: #555555;
+  text-decoration: none;
+  background-color: rgb(204, 217, 228);
+}
+
+.ui-panelmenu .ui-panelmenu-content .ui-menuitem-link {
+  color: #222222;
+  height: 40px;
+  line-height: 30px;
+}
+.ui-panelmenu .ui-panelmenu-header a {
+  display: block;
+  padding: .25em .5em;
+  height: 40px;
+  line-height: 30px;
+  text-decoration:none;
+}
+.ui-tree-horizontal .ui-treenode-content {
+  font-weight: normal;
+  padding: 3px;
+  //background-color: #f3f307;
+}
+//.ui-widget-header .ui-state-highlight, .ui-widget-content .ui-state-highlight, .ui-state-highlight {
+//  color: #f6f7f9;
+//  background-color: #2b9ad8 !important;
+//  border: 2px solid #2b9ad8;
+//}
+
+// 车辆系统 使用开始
+/*.vehicle-panel-div .ui-widget-header {
+  background: #aad6f1;
+}*/
+/*.vehicle-panel-div .ui-widget-content {
+  background: #bbf1b8;
+}*/
+.vehicle-panel-div .ui-panel.ui-widget {
+  padding: 0;
+}
+.vehicle-panel-div .ui-g-8 {
+  width: 99%;
+}
+/*.vehicle-splitButton-div .ui-widget-content  {
+  border: 1px solid #D5D5D5;
+  background: rgba(255, 255, 255, 0.9);
+  color: #222222;
+}*/
+//结束
+
+.ui-steps .ui-steps-item {
+  width: 50%;
+}
+
+.ui-steps.steps-custom {
+  margin-bottom: 30px;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-menuitem-link {
+  height: 10px;
+  padding: 0 1em;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-steps-number {
+  background-color: #0081c2;
+  color: #FFFFFF;
+  display: inline-block;
+  width: 45px;
+  border-radius: 50%;
+  margin-top: -14px;
+  margin-bottom: 10px;
+}
+
+.ui-steps.steps-custom .ui-steps-item .ui-steps-title {
+  color: #555555;
+}
+.ui-tabview .ui-tabview-nav {
+  background: rgb(43, 154, 216);
+}
+.ui-splitbutton {
+  position: absolute;
+  display: inline-block;
+  zoom: 1;
+}
+.ui-tabview .ui-tabview-panel {
+  border-width: 0;
+  padding: 1em;
+  background: 0;
+  background-color: rgba(43, 154, 216, 0.12);
+}
+
+/* 角色管理 */
+.roleAddPanel .ui-fluid .ui-inputtext{
+  width:180px;
+}
+.roleAddPanel .calendar{
+  margin-left: 8px;
+  margin-top: 5px;
+  width:180px;
+}
+
+/*添加类panel*/
+.addPanel input{
+  width:180px;
+  height:29px;
+  border: 1px solid #d6d6d6;
+  border-radius: 3px;
+}
+.addPanel .ui-fluid .ui-inputtext{
+    width:180px;
+  //width: auto;
+}
+.addPanel .ui-togglebutton.ui-button.ui-state-default, .ui-selectbutton .ui-button.ui-state-default{
+  width:180px;
+}
+.addPanel .ui-fluid .ui-dropdown{
+  width:182px;
+}
+.addPanel .ui-fluid .ui-multiselect{
+  width: 180px;
+}
+.addPanel .multiSelect .ui-inputtext{
+  width: 100%;
+}
+.addPanel .ui-multiselect .ui-multiselect-label-container{
+  height:30px;
+}
+.addPanel .alert-danger{
+  width:180px;
+}
+.addPanel .container{
+  margin-top:20px;
+}
+/*---------*/
+
+table .ui-widget-content,.ui-panelmenu-panel .ui-widget-content  {
+  border: 1px solid #D5D5D5;
+ // background: rgba(255, 255, 255, 0.5);
+  color: #222222;
+}
+.left-nav .ui-panelmenu-panel .ui-state-default{
+  border: 1px solid #3c6e9b;
+  background: rgba(250, 250, 251, 0.76);
+  color: #555555;
+}
+.ui-panelmenu .ui-panelmenu-content .ui-menuitem-link:hover {
+  border-color: #c0c0c0;
+  background: #2b9ad8;
+  color: #ffffff;
+  border-color: transparent;
+}
+.ui-panelmenu .ui-panelmenu-header:not(.ui-state-active):hover a {
+  color: #ffffff;
+  background: #2b9ad8;
+}
+.ui-datatable-tablewrapper{
+  font-size: 14px;
+}
+.ui-panel.ui-widget {
+  padding: 15px;
+}
+.ui-tabview.ui-tabview-top>.ui-tabview-nav{
+  font-size: 14px;
+}
+
+/*菜单*/
+.ui-panelmenu .ui-menu-list>li.selected>a{
+  background: #2b9ad8;
+  color:white;
+}
+
+.ui-panelmenu .ui-panelmenu-header.selected>a{
+  background: #2b9ad8;
+  color:white;
+}
+/*----*/
+.ui-splitbutton .ui-button.ui-splitbutton-menubutton{
+  width: 2em;
+  height: 100%;
+  position: absolute;
+}
+.ui-panel-content-wrapper{
+  font-size: 14px;
+}
+
+.ui-tabview .ui-tabview-nav > li.ui-state-active{
+  background-color: #E6F3FB;
+}
+
+/* fieldSet */
+.violation .ui-fieldset, .ui-fieldset .ui-fieldset-legend {
+  font-size: 14px;
+  width: auto;
+}
+
+/* 意见反馈列表 */
+.suggestionTable.ui-datatable tbody > tr.ui-widget-content{
+  height:50px;
+
+}
+.suggestionTable.ui-datatable tbody > tr.ui-widget-content >td span.ui-cell-data > span.content{
+   text-overflow: ellipsis;
+   overflow: hidden;
+   white-space: nowrap;
+ }
+.ui-confirmdialog.ui-dialog .ui-dialog-content{
+  max-height:250px;
+}
+.ui-confirmdialog.ui-dialog-content .ui-confirmdialog-message{
+  max-height:250px;
+  overflow: scroll;
+}
