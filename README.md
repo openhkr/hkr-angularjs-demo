@@ -3,7 +3,7 @@
 1    npm install
 2    npm start
 
-Entrance  url:   http://localhost:8080/platform/
+启动后浏览器访问地址:   http://localhost:8080/platform/
 
 
 功能介绍
